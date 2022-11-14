@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "DOM"],
+    "target": "esnext",
+    "types": ["node", "vitest/globals"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules/*",
+  ]
+}
