@@ -10,7 +10,7 @@
 // Add your own cookie in var cookie.
 import {cookie} from "./cookie.mjs"
 
-const year = '2021'
+const year = '2022'
 const url = `https://adventofcode.com/${year}/day/`
 $.verbose = false
 console.log('Create a new day structure')
