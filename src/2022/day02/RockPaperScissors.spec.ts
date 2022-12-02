@@ -20,7 +20,6 @@ C Z
 
 `
 
-
 describe('Rock Paper Scissors', () => {
   it('should compute the line score', () => {
     expect(lineScore(input[0])).toEqual(8)
@@ -53,5 +52,4 @@ describe('Rock Paper Scissors', () => {
   it('should compute the total score ⭐️', () => {
     expect(totalScore(realInput, chooseShape)).toEqual(13131)
   })
-
 })
