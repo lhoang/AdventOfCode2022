@@ -2,7 +2,7 @@ const wins = ['Rock Paper', 'Paper Scissors', 'Scissors Rock']
 const loses = ['Rock Scissors', 'Paper Rock', 'Scissors Paper']
 
 export const lineScore = (s: string) => {
-  const map = {
+  const map: Record<string, string> = {
     A: 'Rock',
     B: 'Paper',
     C: 'Scissors',
@@ -26,7 +26,7 @@ export const totalScore = (input: string[], method = lineScore) =>
   input.map(method).reduce((a, b) => a + b)
 
 export const chooseShape = (s: string) => {
-  const p1map = {
+  const p1map: Record<string, string> = {
     A: 'Rock',
     B: 'Paper',
     C: 'Scissors',
@@ -37,11 +37,11 @@ export const chooseShape = (s: string) => {
     .split(' ')
     .map(c => p1map[c] ?? c)
   const [p1, instruction] = line
-  let p2: string
+  let p2: string | undefined
   let results = 0
   switch (instruction) {
     case 'Z':
-      p2 = wins.find(w => w.startsWith(p1)).split(' ')[1]
+      p2 = wins.find(w => w.startsWith(p1 ?? ''))?.split(' ')[1]
       results = 6
       break
     case 'Y':
@@ -49,7 +49,7 @@ export const chooseShape = (s: string) => {
       results = 3
       break
     case 'X':
-      p2 = loses.find(w => w.startsWith(p1)).split(' ')[1]
+      p2 = loses.find(w => w.startsWith(p1 ?? ''))?.split(' ')[1]
   }
 
   const shape = p2 === 'Scissors' ? 3 : p2 === 'Paper' ? 2 : 1

@@ -48,7 +48,7 @@ export function splitByEmptyLine(arr: Array<string>): Array<Array<string>> {
         if (line === '') {
           acc.push([])
         } else {
-          acc[acc.length - 1].push(line)
+          acc?.[acc.length - 1]?.push(line)
         }
         return acc
       },

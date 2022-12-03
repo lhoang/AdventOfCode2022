@@ -1,13 +1,14 @@
 {
-  "name": "AdventOfCode2022",
+  "name": "advent-of-code-2022",
   "author": "lhoang",
-  "description": "Code Challenge in Typescript",
+  "description": "Code Challenge in Typescript https://adventofcode.com",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "lint": "prettier -w . && eslint '**/*.{js,ts}' --fix"
   },
   "devDependencies": {
+    "@mobily/ts-belt": "^3.13.1",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "dedent-js": "^1.0.1",

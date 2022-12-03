@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@mobily/ts-belt': ^3.13.1
   '@typescript-eslint/eslint-plugin': ^5.42.1
   '@typescript-eslint/parser': ^5.42.1
   dedent-js: ^1.0.1
@@ -12,6 +13,7 @@ specifiers:
   vitest: ^0.25.1
 
 devDependencies:
+  '@mobily/ts-belt': 3.13.1
   '@typescript-eslint/eslint-plugin': 5.42.1_2udltptbznfmezdozpdoa2aemq
   '@typescript-eslint/parser': 5.42.1_rmayb2veg2btbq6mbmnyivgasy
   dedent-js: 1.0.1
@@ -94,6 +96,14 @@ packages:
       {
         integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==,
       }
+    dev: true
+
+  /@mobily/ts-belt/3.13.1:
+    resolution:
+      {
+        integrity: sha512-K5KqIhPI/EoCTbA6CGbrenM9s41OouyK8A03fGJJcla/zKucsgLbz8HNbeseoLarRPgyWJsUyCYqFhI7t3Ra9Q==,
+      }
+    engines: { node: '>= 10.*' }
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
