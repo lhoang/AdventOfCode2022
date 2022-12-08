@@ -57,16 +57,6 @@ export function splitByEmptyLine(arr: Array<string>): Array<Array<string>> {
     .filter(d => d.length)
 }
 
-/**
- * Generator of range (closed).
- * Ex: range(2, 5) === [2, 3, 4, 5]
- */
-export function range(start: number, end: number): Array<number> {
-  return start <= end
-    ? new Array(end - start + 1).fill(0).map((_, i) => i + start)
-    : new Array(start - end + 1).fill(0).map((_, i) => start - i)
-}
-
 export function time(wrapped: () => void, second = false) {
   let unit = 'ms'
   let div = 1
