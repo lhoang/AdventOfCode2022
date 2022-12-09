@@ -53,11 +53,7 @@ describe('SupplyStacks', () => {
   })
 
   it('should apply all instructions', () => {
-    expect(applyAllInstructions(input)).toEqual([
-      ['C'],
-      ['M'],
-      ['P', 'D', 'N', 'Z'],
-    ])
+    expect(applyAllInstructions(input)).toEqual('CMZ')
   })
 
   it('should apply all instructions - part 1 ⭐️', () => {
