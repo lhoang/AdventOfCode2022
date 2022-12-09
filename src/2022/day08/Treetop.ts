@@ -62,7 +62,7 @@ export const countAllVisibleTrees = (map: number[][]): number => {
 }
 
 export const takeWhile = (h: number, arr: number[]): number[] => {
-  return arr.slice(0).reduce<number[]>((acc, current, i, array) => {
+  return arr.slice(0).reduce<number[]>((acc, current, _i, array) => {
     if (current >= h) {
       // stop immediately
       array.splice(1)
