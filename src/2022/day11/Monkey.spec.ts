@@ -1,5 +1,11 @@
 import { readFileAsLines, split, splitByEmptyLine } from '../../utils/input.js'
-import { monkeyBusiness, parseMonkey, play, playRound } from './Monkey.js'
+import {
+  monkeyBusiness,
+  parseMonkey,
+  play,
+  playWithMod,
+  playRound,
+} from './Monkey.js'
 import { expect } from 'vitest'
 const realInput = readFileAsLines('2022/day11/input.txt')
 
@@ -51,8 +57,8 @@ describe('Monkey', () => {
 
     const targets = monkey.round()
     expect(targets).toEqual({
-      '1' : [2080],
-      '3' : [1200, 3136]
+      '1': [2080],
+      '3': [1200, 3136],
     })
     expect(monkey.inspectedItems).toEqual(3)
     expect(monkey.items).toHaveLength(0)
@@ -65,14 +71,14 @@ describe('Monkey', () => {
       [20, 23, 27, 26],
       [2080, 25, 167, 207, 401, 1046],
       [],
-      []
+      [],
     ])
     playRound(monkeys)
     expect(monkeys.map(m => m.items)).toEqual([
       [695, 10, 71, 135, 350],
       [43, 49, 58, 55, 362],
       [],
-      []
+      [],
     ])
   })
 
@@ -83,7 +89,7 @@ describe('Monkey', () => {
       [10, 12, 14, 26, 34],
       [245, 93, 53, 199, 115],
       [],
-      []
+      [],
     ])
     expect(monkeyBusiness(monkeys)).toEqual(10605)
   })
@@ -93,10 +99,16 @@ describe('Monkey', () => {
     expect(monkeyBusiness(monkeys)).toEqual(316888)
   })
 
-  it('should play 20 rounds - part 2 ⭐️', () => {
-    const monkeys = play(input, 20, false)
-    expect(monkeys.map(m => m.inspectedItems)).toEqual([])
-    expect(monkeyBusiness(monkeys)).toEqual(2_713_310_158)
+  it('should play 20 rounds - no relief', () => {
+    const monkeys = playWithMod(input, 20)
+    expect(monkeyBusiness(monkeys)).toEqual(99 * 103)
+
+    const monkeys10000 = playWithMod(input, 10_000)
+    expect(monkeyBusiness(monkeys10000)).toEqual(2_713_310_158)
   })
 
+  it('should play 20 rounds - part 2 ⭐⭐️️', () => {
+    const monkeys = playWithMod(realInput, 10000)
+    expect(monkeyBusiness(monkeys)).toEqual(35_270_398_814)
+  })
 })
